@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 
-
-
+<h1>Index page (/index.php)</h1>
 
 <?php
 if (have_posts()) {
@@ -10,8 +9,5 @@ if (have_posts()) {
     }
 }
 ?>
-
-
-
 
 <?php get_footer(); ?>
