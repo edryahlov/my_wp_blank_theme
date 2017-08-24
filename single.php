@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<h1><?php _e('Single page (/single.php)');?></h1>
+<h1><?php _e('Single page (/single.php)',DOMAIN);?></h1>
 
 <?php
 if (have_posts()) {
