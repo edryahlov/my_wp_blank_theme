@@ -16,5 +16,3 @@ function add_post_formats() { //or use default ones
 }
 add_action( 'after_setup_theme', 'add_post_formats', 20 );
 
-
-

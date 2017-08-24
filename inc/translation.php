@@ -8,8 +8,8 @@ preg_match('/Text Domain: ([0-9a-zA-Z_-]{2,20})/', $contents, $text_domain);
 define('DOMAIN',$text_domain[1]); //set domain text for translation - gets from style.css
 
 if (strstr($_SERVER['HTTP_ACCEPT_LANGUAGE'],'ru') && in_array('ru_RU',get_available_languages(get_template_directory() . '/languages'))) {
-    add_filter('language_attributes',function (){
-        return 'lang="ru-RU"';
+    add_filter('language_attributes',function ($e){
+        return str_replace('en-US','ru-RU',$e);
     });
     add_action('template_redirect', function(){
         load_textdomain(DOMAIN, get_template_directory() . '/languages/ru_RU.mo' );
