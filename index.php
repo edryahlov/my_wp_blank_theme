@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<h1>Index page (/index.php)</h1>
+<h1><?php _e('Index page (/index.php)','my');?></h1>
 
 <?php
 if (have_posts()) {

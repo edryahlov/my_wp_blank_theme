@@ -9,3 +9,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<a href="<?php $_SERVER['REQUEST_URI']?>?lang=ru">RU</a> | <a href="<?php $_SERVER['REQUEST_URI']?>?lang=eng">ENG</a>
+
+<?php echo $_COOKIE["lang"] ?>
