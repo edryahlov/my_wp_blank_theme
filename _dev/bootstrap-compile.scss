@@ -1,0 +1,69 @@
+$small-font-size: 80%;
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+
+// Grid breakpoints
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+
+// Grid containers
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+);
+
+@at-root {
+  @-ms-viewport { width: device-width; }
+}
+
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+
+
+@import "bootstrap4-source/functions";
+@import "bootstrap4-source/variables";
+
+
+@import "bootstrap4-source/mixins";
+@import "bootstrap4-source/reboot";
+@import "bootstrap4-source/type";
+
+@import "bootstrap4-source/utilities/text";
+@import "bootstrap4-source/utilities/align";
+@import "bootstrap4-source/utilities/clearfix";
+@import "bootstrap4-source/utilities/embed";
+@import "bootstrap4-source/utilities/float";
+@import "bootstrap4-source/utilities/visibility";
+
+
+@import "bootstrap4-source/grid";
+@import "bootstrap4-source/utilities/flex";
+@import "bootstrap4-source/bootstrap-grid";
+
+/*
+@import "bootstrap4-source/modal";
+@import "bootstrap4-source/carousel";
+*/
+
