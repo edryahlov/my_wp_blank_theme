@@ -1,11 +1,6 @@
 <?php
 
-$filename = get_template_directory()."/style.css";
-$handle = fopen($filename, "r");
-$contents = fread($handle, filesize($filename));
-fclose($handle);
-preg_match('/Text Domain: ([0-9a-zA-Z_-]{2,20})/', $contents, $text_domain);
-define('DOMAIN',$text_domain[1]); //set domain text for translation - gets from style.css
+define('DOMAIN',wp_get_theme()->get('TextDomain')); //set domain text for translation - gets from style.css
 
 if (strstr($_SERVER['HTTP_ACCEPT_LANGUAGE'],'ru') && in_array('ru_RU',get_available_languages(get_template_directory() . '/languages'))) {
     add_filter('language_attributes',function ($e){
