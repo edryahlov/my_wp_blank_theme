@@ -10,7 +10,11 @@
 
 <body <?php body_class(); ?>>
 
-<a href="?lang=rus">RUS</a> / <a href="?lang=eng">ENG</a>
+<?php
+    LANG == 'eng' ? $lang_choice = '<a href="?lang=rus">RUS</a>' : $lang_choice = '<a href="?lang=eng">ENG</a>';
+    echo $lang_choice;
+?>
+
 
 <div class="container">
     <div class="row">
@@ -18,6 +22,7 @@
         <div class="col-auto">
             <?php
                 $nav_menu_args = array(
+                    'theme_location'  => 'header_menu_'.LANG,
                     'echo'            => false, //leave it for processing via regexp
                     'container'       => 'nav',
                     'container_class' => 'row',
@@ -33,5 +38,7 @@
 </div>
 
 <?php
+
+
 //    global $post;
 //    echo $post_slug=$post->post_name;
