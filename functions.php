@@ -6,6 +6,7 @@ define('CSS_VERSION',time()); //dev css anti-cache - replace time() on productio
 require get_template_directory().'/inc/cleanup.php'; //cleanup WP version in metas for security reasons
 require get_template_directory().'/inc/enqueue.php'; //enqueueing the scripts and styles
 require get_template_directory().'/inc/translation.php'; //translation module
+require get_template_directory().'/inc/html-on-pages.php'; //adds .html to pages
 
 
 
