@@ -9,3 +9,29 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<a href="?lang=rus">RUS</a> / <a href="?lang=eng">ENG</a>
+
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-auto">
+            <?php
+                $nav_menu_args = array(
+                    'echo'            => false, //leave it for processing via regexp
+                    'container'       => 'nav',
+                    'container_class' => 'row',
+                    'before'          => '<div class="col text-nowrap">',
+                    'after'           => '</div>',
+                    'items_wrap'      => '%3$s',
+                    'depth'           => 0,
+                );
+                echo preg_replace("/<\\/?li(\\s+.*?>|>)/",'',wp_nav_menu($nav_menu_args));
+                ?>
+        </div>
+    </div>
+</div>
+
+<?php
+//    global $post;
+//    echo $post_slug=$post->post_name;
