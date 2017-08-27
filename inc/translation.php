@@ -1,8 +1,8 @@
 <?php
 
-if (isset($_COOKIE['lang']) && !isset($_GET['lang'])) {
+if (get_option('theme_language') && !isset($_GET['lang'])) {
     //get language from cookie
-    define('LANG',$_COOKIE['lang']);
+    define('LANG',get_option('theme_language'));
 } else {
     //get language
     strstr($_SERVER['HTTP_ACCEPT_LANGUAGE'],'ru') ? $flag='rus' : $flag='eng';
@@ -14,7 +14,7 @@ if (isset($_COOKIE['lang']) && !isset($_GET['lang'])) {
 
     //set language
     define('LANG',$flag);
-    setcookie('lang',$flag,time()+86400*10);
+    update_option('theme_language',$flag);
 }
 
 define('DOMAIN',wp_get_theme()->get('TextDomain')); //set domain text for translation - gets from style.css
