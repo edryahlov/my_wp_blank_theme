@@ -14,6 +14,11 @@ body {
 .container,.container-fluid {
   min-width: 480px; //320px custom or 480px - default bootstrap 4 min-width
 }
+.flag {
+  width: 50px;
+  height: auto !important;
+  border: solid 1px #aaa;
+}
 
 
 //================================================

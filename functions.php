@@ -10,4 +10,3 @@ require get_template_directory().'/inc/html-on-pages.php'; //adds .html to pages
 require get_template_directory().'/inc/theme-support.php';
 require get_template_directory().'/inc/nav-menu-walker.php';
 
-

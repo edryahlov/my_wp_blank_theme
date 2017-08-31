@@ -29,3 +29,15 @@ function tags_support_query($wp_query) {
 // tag hooks
 add_action('init', 'tags_support_all');
 add_action('pre_get_posts', 'tags_support_query');
+
+
+
+/**
+ * Add SVG capabilities
+ */
+function wpcontent_svg_mime_type( $mimes = array() ) {
+    $mimes['svg']  = 'image/svg+xml';
+    $mimes['svgz'] = 'image/svg+xml';
+    return $mimes;
+}
+add_filter( 'upload_mimes', 'wpcontent_svg_mime_type' );
