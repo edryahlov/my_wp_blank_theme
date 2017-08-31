@@ -11,10 +11,15 @@
 <body <?php body_class(); ?>>
 
 <?php
-    LANG == 'eng' ? $lang_choice = '<a href="?lang=rus">RUS</a>' : $lang_choice = '<a href="?lang=eng">ENG</a>';
-    echo $lang_choice;
-?>
 
+    $lang_path = parse_url($_SERVER['REQUEST_URI'])['path'];
+    if (strstr($_SERVER['REQUEST_URI'],'_rus.html?lang=rus')) {$lang_path = str_replace('_rus.html','.html',$lang_path);}
+    else {$lang_path = str_replace('.html','_rus.html',$lang_path);}
+
+    LANG == 'eng' ? $lang_choice = '<a href="'.$lang_path.'?lang=rus">RUS</a>' : $lang_choice = '<a href="'.$lang_path.'?lang=eng">ENG</a>';
+    echo $lang_choice;
+
+?>
 
 <div class="container">
     <div class="row">
@@ -36,9 +41,3 @@
         </div>
     </div>
 </div>
-
-<?php
-
-
-//    global $post;
-//    echo $post_slug=$post->post_name;
