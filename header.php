@@ -31,12 +31,13 @@
                     'echo'            => false, //leave it for processing via regexp
                     'container'       => 'nav',
                     'container_class' => 'row',
-                    'before'          => '<div class="col text-nowrap">',
-                    'after'           => '</div>',
+//                    'before'          => '<div class="col text-nowrap">',
+//                    'after'           => '</div>',
                     'items_wrap'      => '%3$s',
                     'depth'           => 0,
+                    'walker'          => new Walker_Nav_Menu1
                 );
-                echo preg_replace("/<\\/?li(\\s+.*?>|>)/",'',wp_nav_menu($nav_menu_args));
+                echo wp_nav_menu($nav_menu_args);
                 ?>
         </div>
     </div>
