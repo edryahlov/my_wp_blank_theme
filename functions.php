@@ -10,3 +10,19 @@ require get_template_directory().'/inc/html-on-pages.php'; //adds .html to pages
 require get_template_directory().'/inc/theme-support.php';
 require get_template_directory().'/inc/nav-menu-walker.php';
 
+if (is_admin())
+{
+    $query = new WP_Query(array(
+        'category_name' => 'verstka',
+        'posts_per_page' => -1,
+    ));
+
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+            $query->the_post();
+            if (!get_post_meta(get_the_ID(), 'clicks', true)) update_post_meta(get_the_ID(), 'clicks', 0);
+//            update_post_meta(get_the_ID(), 'clicks', 0);
+        }
+    }
+    wp_reset_postdata();
+}

@@ -1,10 +1,14 @@
 <?php
 
-//require get_template_directory().'/inc/custom-post-format.php'; //custom post formats - uncomment if needed
+//require get_template_directory().'/inc/custom-post-format.php'; //custom post formats - it's kinda categories - so... fuck it :)
+
 function add_post_formats() { //or use default ones
     add_theme_support('post-formats', array('gallery', 'quote', 'video', 'aside', 'image', 'link')); //default post formats delete not needed ones
 }
 add_action( 'after_setup_theme', 'add_post_formats', 20 );
+
+
+
 
 
 function add_some_theme_support() {
@@ -32,6 +36,16 @@ add_action('pre_get_posts', 'tags_support_query');
 
 
 
+##  отменим показ выбранного термина наверху в checkbox списке терминов
+add_filter( 'wp_terms_checklist_args', 'set_checked_ontop_default', 10 );
+function set_checked_ontop_default( $args ) {
+    // изменим параметр по умолчанию на false
+    if( ! isset($args['checked_ontop']) )
+        $args['checked_ontop'] = false;
+
+    return $args;
+}
+
 /**
  * Add SVG capabilities
  */
@@ -41,3 +55,22 @@ function wpcontent_svg_mime_type( $mimes = array() ) {
     return $mimes;
 }
 add_filter( 'upload_mimes', 'wpcontent_svg_mime_type' );
+
+
+
+## Удаление файлов license.txt и readme.html для защиты
+if( is_admin() && ! defined('DOING_AJAX') ){
+    $license_file = ABSPATH .'/license.txt';
+    $readme_file = ABSPATH .'/readme.html';
+
+    if( file_exists($license_file) && current_user_can('manage_options') ){
+        $deleted = unlink($license_file) && unlink($readme_file);
+
+        if( ! $deleted  )
+            $GLOBALS['readmedel'] = 'Не удалось удалить файлы: license.txt и readme.html из папки `'. ABSPATH .'`. Удалите их вручную!';
+        else
+            $GLOBALS['readmedel'] = 'Файлы: license.txt и readme.html удалены из из папки `'. ABSPATH .'`.';
+
+        add_action( 'admin_notices', function(){  echo '<div class="error is-dismissible"><p>'. $GLOBALS['readmedel'] .'</p></div>'; } );
+    }
+}
