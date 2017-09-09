@@ -10,6 +10,18 @@
 
 <body <?php body_class(); ?>>
 
+<?php if (strstr(get_site_url(),'localhost')) :?>
+<div class="container">
+	<div class="row">
+		<div class="col boot-xxs">xxs</div>
+		<div class="col boot-xs">xs</div>
+		<div class="col boot-sm">sm</div>
+		<div class="col boot-md">md</div>
+		<div class="col boot-lg">lg</div>
+		<div class="col boot-xl">xl</div>
+	</div>
+</div>
+<?php endif;?>
 
 
 <div class="container">

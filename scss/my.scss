@@ -27,36 +27,41 @@ body {
 // maybe this section will be useful :)
 //================================================
 @media (min-width: 320px) and (max-width: 479px) {
-  div[class^='col-'],.col {padding-left: 0; padding-right: 0;}
-  body {background-color: red;}
+  .boot-xxs {background-color: green;}
+
 }
 //========================
 // XS
 //========================
 @media (min-width: 480px) and (max-width: 575px) {
-  body {background-color: silver;}
+  .boot-xs {background-color: green;}
+
 }
 //========================
 // SM
 //========================
-@media (min-width: 576px) {
+@media (min-width: 576px) and (max-width: 767px) {
+  .boot-sm {background-color: green;}
 
 }
 //========================
 // MD
 //========================
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 991px) {
+  .boot-md {background-color: green;}
 
 }
 //========================
 // LG
 //========================
-@media (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1199px) {
+  .boot-lg {background-color: green;}
 
 }
 //========================
 // XL
 //========================
 @media (min-width: 1200px) {
+  .boot-xl {background-color: green;}
 
 }
