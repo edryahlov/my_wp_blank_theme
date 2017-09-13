@@ -9,6 +9,9 @@ require get_template_directory().'/inc/translation.php'; //translation module
 require get_template_directory().'/inc/html-on-pages.php'; //adds .html to pages
 require get_template_directory().'/inc/theme-support.php';
 require get_template_directory().'/inc/nav-menu-walker.php';
+require get_template_directory().'/acf.php'; //advanced custom fields
+
+//define( 'ACF_LITE', true ); //To remove all visual interfaces from the Advanced Custom Fields plugin, you can use a constant to enable lite mode.
 
 if (is_admin())
 {
@@ -26,3 +29,8 @@ if (is_admin())
     }
     wp_reset_postdata();
 }
+
+
+
+
+
