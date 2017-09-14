@@ -55,7 +55,7 @@ gulp.task('sass:watch', function () {
 });
 
 //image compression
-gulp.task('img', () =>
+gulp.task('img', , function () {
     gulp.src('img_in/*')
         .pipe(imagemin({
           interlaced: true,
@@ -63,7 +63,7 @@ gulp.task('img', () =>
           optimizationLevel: 5
         }))
         .pipe(gulp.dest('../img'))
-);
+});
 
 
 
