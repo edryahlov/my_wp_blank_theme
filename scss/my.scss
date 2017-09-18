@@ -1,25 +1,30 @@
 //========================
 // BASE CONFIG
 //========================
-
-div[class^='col'],.border {
-  border: dashed 1px rgba(#000,.3);
+div[class^='col'],
+.border {
+    border: dashed 1px rgba(#000, .3);
 }
+
 html {
-  font-size: 16px;
-}
-body {
-  font-family: "Roboto",Tahoma,sans-serif;
-}
-.container,.container-fluid {
-  min-width: 480px; //320px custom or 480px - default bootstrap 4 min-width
-}
-.flag {
-  width: 50px;
-  height: auto !important;
-  border: solid 1px #aaa;
+    font-size: 16px;
+    color: #f00;
 }
 
+body {
+    font-family: "Roboto", Tahoma, sans-serif;
+}
+
+.container,
+.container-fluid {
+    min-width: 480px; //320px custom or 480px - default bootstrap 4 min-width
+}
+
+.flag {
+    width: 50px;
+    height: auto !important;
+    border: solid 1px #aaa;
+}
 
 //================================================
 // kinda "XXS" - for super smalls
@@ -27,41 +32,52 @@ body {
 // maybe this section will be useful :)
 //================================================
 @media (min-width: 320px) and (max-width: 479px) {
-  .boot-xxs {background-color: green;}
-
+    .boot-xxs {
+        background-color: green;
+    }
 }
+
 //========================
 // XS
 //========================
 @media (min-width: 480px) and (max-width: 575px) {
-  .boot-xs {background-color: green;}
-
+    .boot-xs {
+        background-color: green;
+    }
 }
+
 //========================
 // SM
 //========================
 @media (min-width: 576px) and (max-width: 767px) {
-  .boot-sm {background-color: green;}
-
+    .boot-sm {
+        background-color: green;
+    }
 }
+
 //========================
 // MD
 //========================
 @media (min-width: 768px) and (max-width: 991px) {
-  .boot-md {background-color: green;}
-
+    .boot-md {
+        background-color: green;
+    }
 }
+
 //========================
 // LG
 //========================
 @media (min-width: 992px) and (max-width: 1199px) {
-  .boot-lg {background-color: green;}
-
+    .boot-lg {
+        background-color: green;
+    }
 }
+
 //========================
 // XL
 //========================
 @media (min-width: 1200px) {
-  .boot-xl {background-color: green;}
-
+    .boot-xl {
+        background-color: green;
+    }
 }
